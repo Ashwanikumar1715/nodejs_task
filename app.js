@@ -3,7 +3,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const errorMiddleware = require('./middlewares/error');
-const cors=require('cors');
 const app = express();
 
 
@@ -17,8 +16,6 @@ app.use(express.json());
 app.use(cookieParser('secret'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors({credentials: true, origin: true, withCredentials: true }))
-// app.use(dotenv())
 
 
 const user = require('./routes/userRoute');
